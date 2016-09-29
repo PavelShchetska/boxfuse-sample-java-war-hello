@@ -6,6 +6,6 @@
 <h1>CONTINUOUS INTEGRATION WITH JENKINS</h1>
 <img src="logo.png">
 
-<h2>Hello, U.D. PIPELINE!</h2>
+<h2>Hello, WORLD!</h2>
 </body>
 </html>
