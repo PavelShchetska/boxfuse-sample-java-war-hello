@@ -1,6 +1,6 @@
 stage('Build') {
     node {
-        git url: 'git@github.com:PavelShchetska/boxfuse-sample-java-war-hello.git'
+        git url: 'https://github.com/PavelShchetska/boxfuse-sample-java-war-hello.git'
         env.PATH = "${tool 'MAVEN3.3.9'}/bin:${env.PATH}"
         sh 'mvn clean package'
         archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
