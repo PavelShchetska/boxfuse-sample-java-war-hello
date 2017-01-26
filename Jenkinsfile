@@ -9,27 +9,31 @@ stage('Build') {
 
 stage('deployToDev') {
     node {
-        sh 'curl -v -u admin:tomcat -T "./target/hello-1.0.war" "http://172.17.0.3:8080/manager/text/deploy?path=/hello-1.0&update=true"'
+        //sh 'curl -v -u admin:tomcat -T "./target/hello-1.0.war" "http://172.17.0.3:8080/manager/text/deploy?path=/hello-1.0&update=true"'
+        sh 'sleep 20'
     }
 }
 
 stage('deployToQA') {
     input 'Do you approve deployment to QA?'
     node {
-        sh 'curl -v -u admin:tomcat -T "./target/hello-1.0.war" "http://172.17.0.4:8080/manager/text/deploy?path=/hello-1.0&update=true"'
+        //sh 'curl -v -u admin:tomcat -T "./target/hello-1.0.war" "http://172.17.0.4:8080/manager/text/deploy?path=/hello-1.0&update=true"'
+        sh 'sleep 20'
     }
 }
 
 stage('deployToStage') {
     input 'Do you approve deployment to Stage?'
     node {
-        sh 'curl -v -u admin:tomcat -T "./target/hello-1.0.war" "http://172.17.0.5:8080/manager/text/deploy?path=/hello-1.0&update=true"'
+        //sh 'curl -v -u admin:tomcat -T "./target/hello-1.0.war" "http://172.17.0.5:8080/manager/text/deploy?path=/hello-1.0&update=true"'
+        sh 'sleep 20'
     }
 }
 
 stage('deployToProd') {
     input 'Do you approve deployment to Prode?'
     node {
-        sh 'curl -v -u admin:tomcat -T "./target/hello-1.0.war" "http://172.17.0.6:8080/manager/text/deploy?path=/hello-1.0&update=true"'
+        //sh 'curl -v -u admin:tomcat -T "./target/hello-1.0.war" "http://172.17.0.6:8080/manager/text/deploy?path=/hello-1.0&update=true"'
+        sh 'sleep 20'
     }
 }
