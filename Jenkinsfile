@@ -7,6 +7,15 @@ stage('Build') {
     }
 }
 
+stage('SonarQube analysis') {
+    withSonarQubeEnv('My SonarQube Server') {
+      // requires SonarQube Scanner for Maven 3
+      node {
+      sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
+    }
+  }
+}
+
 stage('deployToDev') {
     node {
         sh 'curl -v -u admin:tomcat -T "./target/hello-1.0.war" "http://192.168.56.2:81/manager/text/deploy?path=/hello-1.0&update=true"'
