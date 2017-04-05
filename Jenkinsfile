@@ -8,10 +8,12 @@ stage('Build') {
 }
 
 stage('SonarQube analysis') {
-  withSonarQubeEnv('My SonarQube Server') {
-    env.PATH = "${tool 'MAVEN3.3.9'}/bin:${env.PATH}"
-    sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
-  }
+    node {
+        withSonarQubeEnv('sonar') {
+            env.PATH = "${tool 'MAVEN3.3.9'}/bin:${env.PATH}"
+            sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
+        }
+    }
 }
 
 stage('deployToDev') {
