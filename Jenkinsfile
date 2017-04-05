@@ -9,8 +9,8 @@ stage('Build') {
 
 stage('deployToDev') {
     node {
-        //sh 'curl -v -u admin:tomcat -T "./target/hello-1.0.war" "http://http://192.168.56.2:81/manager/text/deploy?path=/hello-1.0&update=true"'
-        sh 'sleep 20'
+        sh 'curl -v -u admin:tomcat -T "./target/hello-1.0.war" "http://192.168.56.2:81/manager/text/deploy?path=/hello-1.0&update=true"'
+        //sh 'sleep 20'
     }
 }
 
