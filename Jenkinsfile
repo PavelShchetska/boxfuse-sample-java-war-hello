@@ -10,9 +10,7 @@ stage('Build') {
 stage('SonarQube analysis') {
     withSonarQubeEnv('My SonarQube Server') {
       // requires SonarQube Scanner for Maven 3
-      node {
       sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
-    }
   }
 }
 
