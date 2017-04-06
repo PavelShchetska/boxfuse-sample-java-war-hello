@@ -6,6 +6,6 @@
 <h1>CONTINUOUS INTEGRATION WITH JENKINS</h1>
 <img src="logo.png">
 
-<h2>April 06 2017</h2>
+<h2>Hello team</h2>
 </body>
 </html>
